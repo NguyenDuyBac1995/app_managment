@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
+import '../../routers/fluro_navigator.dart';
+import 'home_screen.dart';
+import '../../routers/router_generator.dart';
 
 class SecondScreen extends StatelessWidget {
  final String? test;
  final String? test2;
  final String? test3;
- final String? test4;
- final String? test5;
+ final String? text = HomeScreen.username.text;
+ final String? text2 = HomeScreen.password.text;
 
   SecondScreen({
     Key? key,
-    this.test, this.test2, this.test3, this.test4, this.test5
+    this.test, this.test2, this.test3,
   }) : super(key: key);
 
   @override
@@ -75,7 +78,7 @@ class SecondScreen extends StatelessWidget {
                     decoration: InputDecoration(
                         icon: Icon(Icons.account_balance),
                         labelText: "UserName", //babel text
-                        hintText: "$test4",
+                        hintText: "$text",
                         floatingLabelBehavior: FloatingLabelBehavior.always,
                         hintStyle: TextStyle(fontWeight: FontWeight.bold)//hint text
                     ),
@@ -89,7 +92,7 @@ class SecondScreen extends StatelessWidget {
                     decoration: InputDecoration(
                         icon: Icon(Icons.person),
                         labelText: "Password", //babel text
-                        hintText: "$test5",
+                        hintText: "$text2",
                         floatingLabelBehavior: FloatingLabelBehavior.always,
                         hintStyle: TextStyle(fontWeight: FontWeight.bold)//hint text
                     ),
@@ -110,6 +113,10 @@ class SecondScreen extends StatelessWidget {
                     ElevatedButton(
                       child: Text('Log In'),
                       onPressed: () {
+                        // Constants.str_name = "";
+                        // Constants.str_password = "";
+                        // if(Constants.str_name == "$text" && Constants.str_password == "$text2")
+                        NavigatorUtils.push(context, RouterGenerator.routeScreenThree);
                         // nextScreen3(context);
                       },
                     ),
