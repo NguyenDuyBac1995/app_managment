@@ -14,7 +14,7 @@ class SplashScreen extends StatefulWidget {
 
 class _SplashScreenState extends State<SplashScreen> {
   late Timer _timer;
-  int _start = 3;
+  int _start = 6;
 
   void startTimer() {
     const oneSec = Duration(seconds: 1);

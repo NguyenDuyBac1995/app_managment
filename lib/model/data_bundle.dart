@@ -1,5 +1,4 @@
 class DataBundle {
-
   String? test;
   String? test2;
   String? test3;

@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:managment/model/data_bundle.dart';
+import 'package:managment/ui/utils/constants.dart';
 import '../../routers/fluro_navigator.dart';
 import '../../routers/router_generator.dart';
 import '../widgets/appbar/appbar.dart';
-import 'SecondScreen.dart';
+
 
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+  static TextEditingController username = TextEditingController();
+  static TextEditingController password = TextEditingController();
+  const HomeScreen({Key? key,
+   }) : super(key: key);
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -17,8 +21,8 @@ class _HomeScreenState extends State<HomeScreen> {
   TextEditingController name = TextEditingController();
   TextEditingController address = TextEditingController();
   TextEditingController email = TextEditingController();
-  TextEditingController username = TextEditingController();
-  TextEditingController password = TextEditingController();
+
+
   final _formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
@@ -85,7 +89,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 Padding(
                   padding: EdgeInsets.all(7),
                   child: TextFormField(
-                    controller: username,
+                    controller: HomeScreen.username,
                     decoration: InputDecoration(
                       icon: Icon(Icons.ac_unit),
                       labelText: 'UserName',
@@ -102,7 +106,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 Padding(
                   padding: EdgeInsets.all(7),
                   child: TextFormField(
-                    controller: password,
+                    controller: HomeScreen.password,
                     obscureText: true,
                     decoration: InputDecoration(
                       icon: Icon(Icons.key),
@@ -140,11 +144,10 @@ class _HomeScreenState extends State<HomeScreen> {
       test  : name.text,
       test2 : address.text,
       test3 : email.text,
-      test4 : username.text,
-      test5 : password.text
+      // test4 : username.text,
+      // test5 : password.text
     );
     NavigatorUtils.push(context, RouterGenerator.routeScreenTwo, data: dataBundle);
-
   }
 
   void errol(BuildContext context) {
