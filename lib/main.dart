@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'App management',
+        title: 'App management 12312313',
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
           fontFamily: "OpenSan",
